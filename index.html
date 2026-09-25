@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Lineup Flip</title>
+<meta name="description" content="Think you can turn the lineup over?">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lineupflip.com">
+<meta property="og:title" content="Lineup Flip">
+<meta property="og:description" content="Think you can turn the lineup over?">
+<meta property="og:image" content="https://lineupflip.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lineup Flip">
+<meta name="twitter:description" content="Think you can turn the lineup over?">
+<meta name="twitter:image" content="https://lineupflip.com/og-image.png">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgNDgwIj4KPHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiIGZpbGw9IiMwQzFBMTMiLz4KPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM2MCIgcng9IjgwIiBmaWxsPSIjMTMyNzFEIiBzdHJva2U9IiMyQjRBMzgiIHN0cm9rZS13aWR0aD0iNCIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTAsMTEwKSBzY2FsZSgxLjMpIj4KPGRlZnM+PGNsaXBQYXRoIGlkPSJmYXZjbGlwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjY2Ii8+PC9jbGlwUGF0aD48L2RlZnM+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNjYiIGZpbGw9IiNGNEVFREMiLz4KPGcgY2xpcC1wYXRoPSJ1cmwoI2ZhdmNsaXApIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmI3MDMiIHN0cm9rZS1saW5lY2FwPSJidXR0Ij4KPHBhdGggZD0iTSA1NiA0NCBDIDgyIDc4LCA4MiAxMjIsIDU2IDE1NiIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxwYXRoIGQ9Ik0gMTQ0IDQ0IEMgMTE4IDc4LCAxMTggMTIyLCAxNDQgMTU2IiBzdHJva2Utd2lkdGg9IjQiLz4KPHBhdGggZD0iTSA1NiA0NCBDIDgyIDc4LCA4MiAxMjIsIDU2IDE1NiIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWRhc2hhcnJheT0iMi41IDgiLz4KPHBhdGggZD0iTSAxNDQgNDQgQyAxMTggNzgsIDExOCAxMjIsIDE0NCAxNTYiIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1kYXNoYXJyYXk9IjIuNSA4Ii8+CjwvZz4KPHBhdGggZD0iTSAxNy4zIDY5LjkgQSA4OCA4OCAwIDAgMSAxNzYuMiA1NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZiNzAzIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBvbHlnb24gcG9pbnRzPSIxODQuOSw1MSAxNjcuNSw2MSAxODQuMiw2OS45IiBmaWxsPSIjZmZiNzAzIi8+CjxwYXRoIGQ9Ik0gMTgyLjcgMTMwLjEgQSA4OCA4OCAwIDAgMSAyMy44IDE0NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZiNzAzIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBvbHlnb24gcG9pbnRzPSIxNS4xLDE0OSAzMi41LDEzOSAxNS44LDEzMC4xIiBmaWxsPSIjZmZiNzAzIi8+CjwvZz4KPC9zdmc+">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  color-scheme: dark;
+  --ink:#eef3ee;
+  --ink-dim:#a9b8ae;
+  --field-dark:#07130d;
+  --field:#0c2018;
+  --field-panel:#102a1f;
+  --field-panel-2:#153627;
+  --line:#2c4a3a;
+  --dirt:#8a5a34;
+  --dirt-dim:#5c3d24;
+  --amber:#ffb703;
+  --amber-dim:#a87a10;
+  --ball:#f4f1e6;
+  --danger:#e5484d;
+  --danger-dim:#7a2226;
+  --ok:#57c785;
+  --blue:#5aa9e6;
+  --font-display:'Oswald', 'Arial Narrow', sans-serif;
+  --font-body:'Inter', -apple-system, sans-serif;
+  --radius:10px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.45);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:radial-gradient(ellipse at 50% -10%, var(--field-panel-2) 0%, var(--field-dark) 55%);
+  color:var(--ink);
+  font-family:var(--font-body);
+  min-height:100vh;
+  padding-bottom:calc(60px + env(safe-area-inset-bottom, 0px));
+  overscroll-behavior-y:contain;
+}
+::selection{ background:var(--amber); color:#1a1200; }
+h1,h2,h3,h4{ font-family:var(--font-display); margin:0; letter-spacing:0.01em; }
+button{ font-family:var(--font-body); cursor:pointer; }
+input,select{ font-family:var(--font-body); }
+a{ color:var(--amber); }
+
+.wrap{ max-width:1180px; margin:0 auto; padding:18px 16px 0; }
+
+/* ---------- Top bar ---------- */
+.topbar{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:6px 2px 18px;
+  flex-wrap:wrap;
+}
+.brand{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.brand-icon{ width:32px; height:32px; flex-shrink:0; }
+.brand .mark{ font-family:var(--font-display); font-weight:700; font-size:26px; color:var(--ball); }
+.brand .mark span{ color:var(--amber); }
+.brand .sub{ color:var(--ink-dim); font-size:13px; }
+.topbar-actions{ display:flex; gap:8px; flex-wrap:wrap; }
+.btn{
+  border:1px solid var(--line); background:var(--field-panel); color:var(--ink);
+  padding:9px 14px; border-radius:8px; font-size:13.5px; font-weight:600;
+  display:inline-flex; align-items:center; gap:6px; transition:transform .08s ease, border-color .15s ease, background .15s ease;
+}
+.btn:hover{ border-color:var(--amber-dim); }
+.btn:active{ transform:scale(0.97); }
+.btn-primary{ background:var(--amber); border-color:var(--amber); color:#1a1200; }
+.btn-primary:hover{ background:#ffc733; }
+.btn-danger{ border-color:var(--danger-dim); color:#ffd0d1; }
+.btn-danger:hover{ background:var(--danger-dim); }
+.btn-ghost{ background:transparent; }
+.pitcher-select{
+  border:1px solid var(--amber-dim); background:var(--field-panel); color:var(--ink);
+  padding:9px 12px; border-radius:8px; font-size:13.5px; font-weight:600; cursor:pointer;
+  font-family:var(--font-body);
+}
+.pitcher-select:hover{ border-color:var(--amber); }
+.mode-toggle{ display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+.mode-btn{
+  background:var(--field-panel); color:var(--ink-dim); border:none; padding:9px 14px;
+  font-size:13px; font-weight:700; font-family:var(--font-body); cursor:pointer;
+}
+.mode-btn.active{ background:var(--amber); color:#1a1200; }
+.daily-pitcher-label{ font-size:12.5px; color:var(--ink-dim); display:flex; align-items:center; gap:4px; }
+.daily-pitcher-label b{ color:var(--ball); }
+.daily-pitcher-card{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+  background:var(--field-panel); border:1px solid var(--amber-dim); border-radius:10px;
+  padding:14px 18px; margin-top:14px;
+}
+.dpc-id{ display:flex; flex-direction:column; gap:2px; }
+.dpc-kicker{ font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-dim); font-weight:700; }
+.dpc-name{ font-family:var(--font-display); font-size:20px; color:var(--ball); line-height:1.15; }
+.dpc-meta{ font-size:12px; color:var(--ink-dim); display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.dpc-throws{ font-size:10.5px; font-weight:700; color:var(--ink-dim); border:1px solid var(--line); border-radius:4px; padding:1px 6px; }
+.dpc-stats{ display:flex; gap:10px; flex-wrap:wrap; }
+.dpc-stat{ background:var(--field); border:1px solid var(--line); border-radius:8px; padding:7px 14px; text-align:center; min-width:64px; }
+.dpc-stat .v{ font-family:var(--font-display); font-size:17px; color:var(--amber); line-height:1.1; }
+.dpc-stat .k{ font-size:9.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-dim); margin-top:2px; }
+.pitcher-select:focus-visible{ outline:2px solid var(--amber); outline-offset:1px; }
+.btn:disabled{ opacity:.4; cursor:not-allowed; transform:none; }
+
+/* ---------- Scoreboard ---------- */
+.scoreboard{
+  background:linear-gradient(180deg, var(--field-panel) 0%, var(--field-panel-2) 100%);
+  border:1px solid var(--line); border-radius:var(--radius);
+  padding:16px 18px; box-shadow:var(--shadow);
+  display:grid; grid-template-columns: 1.3fr 1fr 1fr auto; gap:18px; align-items:center;
+}
+@media (max-width:760px){ .scoreboard{ grid-template-columns:1fr 1fr; } }
+.sb-block .sb-label{ font-size:10.5px; text-transform:uppercase; letter-spacing:.12em; color:var(--ink-dim); margin-bottom:4px; }
+.sb-block .sb-value{ font-family:var(--font-display); font-size:26px; font-weight:600; color:var(--ball); }
+.sb-pitcher{ display:flex; align-items:center; gap:10px; }
+.pitcher-team{ font-family:var(--font-display); font-size:18px; font-weight:600; color:var(--ball); }
+.team-name-btn{
+  background:none; border:none; padding:0; margin:0; font:inherit; color:var(--amber);
+  font-weight:600; cursor:pointer; text-decoration:none;
+}
+.team-name-btn:hover{ text-decoration:underline; }
+.manager-label{ margin-bottom:10px; }
+.manager-label-btn{
+  background:none; border:none; padding:0; margin:0; font:inherit; font-size:12px;
+  color:var(--ink-dim); cursor:pointer; text-decoration:none;
+}
+.manager-label-btn:hover{ color:var(--amber); text-decoration:underline; }
+.outs-dots{ display:flex; gap:6px; margin-top:4px; }
+.out-dot{ width:13px; height:13px; border-radius:50%; border:2px solid var(--danger-dim); }
+.out-dot.filled{ background:var(--danger); border-color:var(--danger); }
+.sb-status{ text-align:right; font-size:12.5px; color:var(--ink-dim); }
+.sb-status b{ color:var(--amber); }
+
+/* ---------- Main layout ---------- */
+.main-grid{ display:grid; grid-template-columns: 340px 1fr; gap:18px; margin-top:18px; align-items:start; }
+@media (max-width:940px){ .main-grid{ grid-template-columns:1fr; } }
+
+.panel{
+  background:var(--field-panel); border:1px solid var(--line); border-radius:var(--radius);
+  padding:16px; box-shadow:var(--shadow);
+}
+.panel h3{ font-size:14px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-dim); margin-bottom:12px; }
+
+/* Diamond */
+.diamond-wrap{ display:flex; flex-direction:column; align-items:center; gap:14px; }
+.diamond-svg{ width:100%; max-width:300px; }
+.bases-key{ display:flex; gap:14px; font-size:11.5px; color:var(--ink-dim); }
+.bases-key .dot{ display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--ball); margin-right:5px; transform:rotate(45deg); }
+
+/* Lineup slots */
+.lineup-slots{ display:flex; flex-direction:column; gap:6px; }
+.slot{
+  display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:8px;
+  border:1px solid var(--line); background:var(--field);
+}
+.slot.filled{ border-color:var(--line); }
+.slot.up-next{ border-color:var(--amber-dim); background:linear-gradient(90deg, rgba(255,183,3,0.08), transparent); }
+.slot-pos{
+  width:34px; height:34px; border-radius:7px; background:var(--field-panel-2); display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-size:12.5px; font-weight:600; color:var(--ink-dim); flex-shrink:0;
+}
+.slot.filled .slot-pos{ background:var(--dirt-dim); color:var(--ball); }
+.slot-num{
+  width:26px; height:26px; border-radius:50%; background:var(--field-panel-2); display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-size:13px; font-weight:600; color:var(--ink-dim); flex-shrink:0;
+}
+.slot.filled .slot-num{ background:var(--amber); color:#1a1200; }
+.slot.up-next .slot-num{ border:2px solid var(--amber-dim); color:var(--amber); }
+.position-bank{ margin-top:14px; padding-top:12px; border-top:1px dashed var(--line); }
+.pos-bank-row{ display:flex; flex-wrap:wrap; gap:6px; }
+.pos-bank-chip{
+  font-family:var(--font-display); font-size:12px; font-weight:600; letter-spacing:.03em;
+  border:1px solid var(--line); background:var(--field); color:var(--ink);
+  border-radius:6px; padding:5px 9px;
+}
+.pos-bank-chip.used{ background:transparent; color:var(--ink-dim); border-color:var(--line); text-decoration:line-through; opacity:.55; }
+.slot-body{ flex:1; min-width:0; }
+.slot-name{ font-size:13px; font-weight:600; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.slot-outcome{ font-size:11px; color:var(--ink-dim); }
+.slot-outcome.hit{ color:var(--ok); }
+.slot-outcome.out{ color:var(--danger); }
+.slot-empty-label{ font-size:12.5px; color:var(--ink-dim); font-style:italic; }
+
+/* Team summary */
+.team-summary{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+.ts-item{ background:var(--field); border:1px solid var(--line); border-radius:8px; padding:9px 10px; }
+.ts-label{ font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-dim); }
+.ts-value{ font-family:var(--font-display); font-size:17px; color:var(--ball); margin-top:2px; }
+
+/* Player selection */
+.select-header{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;}
+.select-header h3{ margin-bottom:0; }
+.filters{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.filters input[type="text"]{
+  flex:1; min-width:160px; background:var(--field); border:1px solid var(--line); color:var(--ink);
+  padding:9px 12px; border-radius:8px; font-size:13.5px;
+}
+.filters select{
+  background:var(--field); border:1px solid var(--line); color:var(--ink);
+  padding:9px 10px; border-radius:8px; font-size:13px;
+}
+.filters input:focus, .filters select:focus, button:focus-visible, .card:focus-visible{ outline:2px solid var(--amber); outline-offset:1px; }
+
+.player-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:10px; }
+.card{
+  background:var(--field); border:1px solid var(--line); border-radius:9px; padding:12px;
+  display:flex; flex-direction:column; gap:6px; transition:border-color .15s ease, transform .08s ease;
+}
+.card:not(.disabled):hover{ border-color:var(--amber-dim); transform:translateY(-1px); }
+.card.disabled{ opacity:.35; }
+.card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:6px; }
+.card-name{ font-weight:700; font-size:14.5px; }
+.card-team{ font-size:11px; color:var(--ink-dim); }
+.card-pos-pills{ display:flex; gap:4px; flex-wrap:wrap; }
+.pos-pill{ font-size:10px; font-weight:700; background:var(--field-panel-2); color:var(--ink-dim); border-radius:4px; padding:2px 6px; }
+.team-pill{ font-size:10px; font-weight:700; background:var(--field-panel-2); color:var(--ink-dim); border-radius:4px; padding:2px 6px; }
+.team-pill.avail{ color:var(--blue); background:rgba(90,169,230,0.12); }
+.pos-pill.avail{ color:var(--amber); background:rgba(255,183,3,0.12); }
+.card-stats{ display:flex; gap:12px; font-size:11.5px; color:var(--ink-dim); margin-top:2px; }
+.card-stats b{ color:var(--ink); font-family:var(--font-display); font-size:13px; }
+.card-disabled-reason{ font-size:10.5px; color:var(--danger); }
+.card .btn{ margin-top:4px; width:100%; justify-content:center; }
+
+.empty-note{ color:var(--ink-dim); font-size:13px; padding:20px; text-align:center; }
+
+/* Modal */
+.modal-overlay{
+  position:fixed; inset:0; background:rgba(4,10,7,0.72); display:flex; align-items:center; justify-content:center;
+  z-index:100; padding:16px; padding-bottom:max(16px, env(safe-area-inset-bottom, 0px));
+  overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
+}
+.modal{
+  background:var(--field-panel); border:1px solid var(--line); border-radius:14px; max-width:460px; width:100%;
+  padding:0; box-shadow:0 20px 60px rgba(0,0,0,0.6); overflow:hidden; animation:pop .18s ease;
+}
+@keyframes pop{ from{ transform:scale(0.94); opacity:0; } to{ transform:scale(1); opacity:1; } }
+.modal-head{ padding:22px 24px 14px; text-align:center; }
+.modal-outcome{
+  font-family:var(--font-display); font-size:30px; font-weight:700; letter-spacing:.02em;
+}
+.modal-outcome.hit{ color:var(--ok); } .modal-outcome.out{ color:var(--danger); } .modal-outcome.walk{ color:var(--blue); }
+.modal-player{ font-size:16px; font-weight:700; margin-top:8px; }
+.modal-sub{ font-size:12.5px; color:var(--ink-dim); }
+.modal-body{ padding:0 24px 8px; }
+.modal-divider{ border-top:1px dashed var(--line); margin:14px 0; }
+.modal-line{ font-size:12.5px; color:var(--ink-dim); margin-bottom:8px; text-align:center; }
+.slash-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; text-align:center; }
+.slash-item .slash-val{ font-family:var(--font-display); font-size:18px; color:var(--ball); }
+.slash-item .slash-lbl{ font-size:10px; color:var(--ink-dim); text-transform:uppercase; }
+.percentile-bar-wrap{ margin:16px 0 6px; }
+.percentile-bar{ height:8px; border-radius:5px; background:var(--field); overflow:hidden; }
+.percentile-bar-fill{ height:100%; background:linear-gradient(90deg, var(--danger), var(--amber), var(--ok)); }
+.percentile-label{ text-align:center; font-size:12px; color:var(--ink-dim); margin-top:6px; }
+.modal-play{ text-align:center; font-size:12.5px; color:var(--ink-dim); padding:6px 24px 0; }
+.modal-foot{ padding:16px 24px 24px; }
+.modal-foot .btn{ width:100%; justify-content:center; }
+
+/* Position picker modal */
+.pos-choice-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding: 4px 24px 20px; }
+.pos-choice{ padding:14px 6px; text-align:center; border-radius:8px; }
+.pos-choice.chosen{ border-color:var(--amber); background:rgba(255,183,3,0.12); }
+.assign-group-label{ padding:12px 24px 6px; font-size:11px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.06em; }
+.pos-choice .p{ font-family:var(--font-display); font-size:16px; }
+
+.field-row{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px; }
+.field-row.full{ grid-template-columns:1fr; }
+.field-row label{ font-size:11px; color:var(--ink-dim); display:block; margin-bottom:3px; }
+.field-row input, .field-row select{
+  width:100%; background:var(--field-panel); border:1px solid var(--line); color:var(--ink); padding:7px 9px; border-radius:6px; font-size:12.5px;
+}
+.small-note{ font-size:11px; color:var(--ink-dim); line-height:1.5; }
+
+/* Postgame */
+.postgame-overlay{
+  position:fixed; inset:0; background:rgba(4,10,7,0.82); z-index:80;
+  overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
+  padding:30px 14px; padding-bottom:max(30px, env(safe-area-inset-bottom, 0px));
+}
+.postgame-card{ max-width:760px; margin:0 auto; background:var(--field-panel); border:1px solid var(--line); border-radius:14px; padding:28px; box-shadow:0 20px 70px rgba(0,0,0,0.6); }
+.pg-title{ font-family:var(--font-display); font-size:28px; text-align:center; }
+.pg-sub{ text-align:center; color:var(--ink-dim); font-size:13px; margin-top:6px; }
+.pg-score{ text-align:center; margin:22px 0; }
+.pg-perfect-badge{
+  font-family:var(--font-display); font-size:14px; font-weight:700; letter-spacing:.08em;
+  color:var(--amber); margin-bottom:6px; animation: perfectPulse 1.4s ease-in-out infinite;
+}
+@keyframes perfectPulse{ 0%,100%{ opacity:1; } 50%{ opacity:.55; } }
+.pg-score .num{ font-family:var(--font-display); font-size:56px; color:var(--amber); line-height:1; }
+.pg-score .lbl{ font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-dim); margin-top:4px; }
+.pg-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:18px 0; }
+@media (max-width:600px){ .pg-grid{ grid-template-columns:1fr 1fr; } }
+.pg-cell{ background:var(--field); border:1px solid var(--line); border-radius:8px; padding:10px; text-align:center; }
+.pg-cell .v{ font-family:var(--font-display); font-size:18px; color:var(--ball); }
+.pg-cell .k{ font-size:10px; color:var(--ink-dim); text-transform:uppercase; margin-top:2px; }
+.pg-table{ width:100%; border-collapse:collapse; margin-top:10px; font-size:12px; }
+.pg-table th{ text-align:left; color:var(--ink-dim); font-weight:600; font-size:10.5px; text-transform:uppercase; padding:6px 8px; border-bottom:1px solid var(--line); }
+.pg-table td{ padding:7px 8px; border-bottom:1px solid var(--line); }
+.pg-table tr:last-child td{ border-bottom:none; }
+.compare-row{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px dashed var(--line); }
+.compare-row:last-child{ border-bottom:none; }
+.pg-actions{ display:flex; gap:10px; margin-top:22px; flex-wrap:wrap; }
+.pg-actions .btn{ flex:1 1 120px; justify-content:center; }
+.outcome-tag{ font-size:11px; font-weight:700; padding:2px 8px; border-radius:5px; display:inline-block; }
+.outcome-tag.hit{ background:rgba(87,199,133,0.15); color:var(--ok); }
+.outcome-tag.out{ background:rgba(229,72,77,0.15); color:var(--danger); }
+.outcome-tag.walk{ background:rgba(90,169,230,0.15); color:var(--blue); }
+
+.footer-note{ text-align:center; color:var(--ink-dim); font-size:11.5px; margin-top:30px; padding: 0 16px;}
+.attribution-note{ text-align:center; color:var(--ink-dim); font-size:11px; margin-top:10px; padding: 0 16px; }
+.attribution-note a{ color:var(--ink-dim); text-decoration:underline; }
+.attribution-note a:hover{ color:var(--amber); }
+.visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+
+.toast-stack{ position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:130; display:flex; flex-direction:column; gap:8px; align-items:center; pointer-events:none; }
+.toast{
+  background:var(--field-panel); border:1px solid var(--amber-dim); color:var(--ink);
+  padding:10px 16px; border-radius:8px; font-size:13px; box-shadow:var(--shadow);
+  opacity:0; transform:translateY(8px);
+  animation: toastIn .18s ease forwards, toastOut .18s ease forwards 2.4s;
+}
+.toast-anchored{
+  position:fixed; z-index:130; pointer-events:none; max-width:min(88vw, 320px);
+  text-align:center; transform:translate(-50%,-100%);
+  animation: toastAnchoredIn .18s ease forwards, toastAnchoredOut .18s ease forwards 2.4s;
+}
+@keyframes toastIn{ to{ opacity:1; transform:translateY(0); } }
+@keyframes toastOut{ to{ opacity:0; transform:translateY(-6px); } }
+@keyframes toastAnchoredIn{ from{ opacity:0; transform:translate(-50%,-90%); } to{ opacity:1; transform:translate(-50%,-100%); } }
+@keyframes toastAnchoredOut{ to{ opacity:0; transform:translate(-50%,-110%); } }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+}
+
+
+.pick-list{ max-height:520px; overflow-y:auto; display:flex; flex-direction:column; gap:6px; padding-right:4px; }
+.pick-row{
+  display:flex; flex-direction:column; gap:6px; padding:10px 12px; border-radius:8px;
+  border:1px solid var(--line); background:var(--field); transition:border-color .15s ease, transform .08s ease;
+}
+.pick-row.clickable{ cursor:pointer; }
+.pick-row.clickable:hover{ border-color:var(--amber-dim); transform:translateX(2px); }
+.pick-row.disabled{ opacity:.4; }
+.pick-row-top{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.pick-row-bottom{ display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+.pick-row .pr-name{ font-weight:700; font-size:14px; }
+.pick-row .pr-ops{ font-family:var(--font-display); font-size:14px; color:var(--amber); white-space:nowrap; flex-shrink:0; }
+.pick-row .pr-ops-lbl{ font-family:var(--font-body); font-size:9.5px; font-weight:600; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.03em; }
+.pick-row .pr-reason{ font-size:11px; color:var(--danger); white-space:nowrap; flex-shrink:0; }
+.pick-row .pr-pills{ display:flex; gap:4px; flex-wrap:wrap; }
+.bats-tag{ font-size:10px; font-weight:700; color:var(--ink-dim); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+.position-bank{ margin-top:14px; padding-top:12px; border-top:1px dashed var(--line); }
+.pos-bank-row{ display:flex; flex-wrap:wrap; gap:6px; }
+.pos-bank-chip{
+  font-family:var(--font-display); font-size:12px; font-weight:600; letter-spacing:.03em;
+  border:1px solid var(--line); background:var(--field); color:var(--ink);
+  border-radius:6px; padding:5px 9px;
+}
+.pos-bank-chip.used{ background:transparent; color:var(--ink-dim); border-color:var(--line); text-decoration:line-through; opacity:.55; }
+
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lineup Flip mark">
+        <defs><clipPath id="brandClip"><circle cx="100" cy="100" r="66"></circle></clipPath></defs>
+        <circle cx="100" cy="100" r="66" fill="var(--ball)"></circle>
+        <g clip-path="url(#brandClip)" fill="none" stroke="var(--amber)" stroke-linecap="butt">
+          <path d="M 56 44 C 82 78, 82 122, 56 156" stroke-width="4"></path>
+          <path d="M 144 44 C 118 78, 118 122, 144 156" stroke-width="4"></path>
+          <path d="M 56 44 C 82 78, 82 122, 56 156" stroke-width="14" stroke-dasharray="2.5 8"></path>
+          <path d="M 144 44 C 118 78, 118 122, 144 156" stroke-width="14" stroke-dasharray="2.5 8"></path>
+        </g>
+        <path d="M 17.3 69.9 A 88 88 0 0 1 176.2 56" fill="none" stroke="var(--amber)" stroke-width="10" stroke-linecap="round"></path>
+        <polygon points="184.9,51 167.5,61 184.2,69.9" fill="var(--amber)"></polygon>
+        <path d="M 182.7 130.1 A 88 88 0 0 1 23.8 144" fill="none" stroke="var(--amber)" stroke-width="10" stroke-linecap="round"></path>
+        <polygon points="15.1,149 32.5,139 15.8,130.1" fill="var(--amber)"></polygon>
+      </svg>
+      <div class="mark">LINEUP <span>FLIP</span></div>
+      <div class="sub">Think you can turn the lineup over?</div>
+    </div>
+    <div class="topbar-actions">
+      <div class="mode-toggle" id="modeToggle">
+        <button type="button" class="mode-btn" data-mode="daily">Daily</button>
+        <button type="button" class="mode-btn" data-mode="practice">Practice</button>
+      </div>
+      <select id="pitcherSelect" class="pitcher-select" aria-label="Choose pitcher"></select>
+      <button class="btn" id="btnHowTo">How to play</button>
+      <button class="btn btn-danger" id="btnReset">Reset game</button>
+    </div>
+  </div>
+
+  <div class="daily-pitcher-card" id="dailyPitcherCard"></div>
+
+  <div class="scoreboard" id="scoreboard"></div>
+
+  <div class="main-grid">
+    <div class="left-col">
+      <div class="panel" style="margin-bottom:14px;">
+        <h3>Diamond</h3>
+        <div class="diamond-wrap">
+          <svg class="diamond-svg" viewBox="0 0 220 220" id="diamondSvg"></svg>
+        </div>
+      </div>
+      <div class="panel" style="margin-bottom:14px;">
+        <h3>Lineup slots</h3>
+        <div class="manager-label" id="managerLabel"></div>
+        <div class="lineup-slots" id="lineupSlots"></div>
+        <div class="position-bank" id="positionBank"></div>
+        <div class="team-summary" id="teamSummary"></div>
+      </div>
+    </div>
+
+    <div class="right-col">
+      <div class="panel">
+        <div class="select-header">
+          <h3 style="margin-bottom:0;">Search &amp; select a hitter</h3>
+          <div id="pickStatus" style="font-size:12px;color:var(--ink-dim);"></div>
+        </div>
+        <div class="filters">
+          <input type="text" id="fSearch" placeholder="Search by player name…" autocomplete="off">
+          <select id="fPos"><option value="">All positions</option></select>
+          <select id="fTeam"><option value="">All teams</option></select>
+          <select id="fSort">
+            <option value="alpha">Sort: A–Z</option>
+            <option value="team">Sort: Team</option>
+            <option value="ops2026">Sort: 2026 OPS</option>
+            <option value="batsLSR">Sort: Bats — L → S → R</option>
+            <option value="batsRSL">Sort: Bats — R → S → L</option>
+          </select>
+        </div>
+        <div class="pick-list" id="hitterList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">Your active roster is a fixed hitter bank (teams + eligible positions from a 2026 active-roster import); only hitters with at least one recorded plate appearance against the selected pitcher are available to pick. One hitter per team and one hitter per position are enforced.</div>
+  <div class="attribution-note">Data provided by <a href="https://www.baseball-reference.com/" target="_blank" rel="noopener">Baseball-Reference.com</a></div>
+</div>
+
+<div id="modalRoot"></div>
+<div id="postgameRoot"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* =========================================================================
+   MODULE: CONFIG  (editable game-balance knobs)
+   ========================================================================= */
+const POSITIONS = ["C","1B","2B","3B","SS","LF","CF","RF","DH"];
+
+let OUTCOME_BUCKETS = [
+  { min: 99, max: 100, outcome: "HR",  label: "Home Run" },
+  { min: 95, max: 99,  outcome: "3B",  label: "Triple" },
+  { min: 85, max: 95,  outcome: "2B",  label: "Double" },
+  { min: 65, max: 85,  outcome: "1B",  label: "Single" },
+  { min: 50, max: 65,  outcome: "BB",  label: "Walk" },
+  { min: 30, max: 50,  outcome: "PO",  label: "Productive Out" },
+  { min: 10, max: 30,  outcome: "OUT", label: "Regular Out" },
+  { min: 0,  max: 10,  outcome: "SO",  label: "Strikeout" }
+];
+
+// Used instead of OUTCOME_BUCKETS' bottom half whenever a force play is live —
+// a runner on first with fewer than 2 outs. A productive out is treated as very
+// unlikely in that situation, so its percentile range is reassigned below.
+let DP_BUCKETS = [
+  { min: 48, max: 50, outcome: "FC",   label: "Fielder's Choice" },
+  { min: 32, max: 48, outcome: "OUT",  label: "Regular Out" },
+  { min: 16, max: 32, outcome: "GIDP", label: "Double Play" },
+  { min: 0,  max: 16, outcome: "SO",   label: "Strikeout" }
+];
+
+let RULES = {
+  noDataDefaultOps: 0.700     // estimate used only when a hitter has zero recorded PA vs the pitcher
+};
+
+let SCORING = {
+  perRun: 1000,
+  completionBonus: 5000,
+  matchupQualityWeight: 9,   // points per average percentile point (0-100) across the at-bats used
+  perfectRuns: 9,            // runs needed to trigger the flat "Perfect Score" override
+  perfectScore: 15000        // the flat score awarded on a perfect-runs game
+};
+
+let userTeam = { city: "", mascot: "" };
+let managerName = "";
+
+const OUTCOME_META = {
+  HR:  { label:"Home Run",         kind:"hit"  },
+  "3B":{ label:"Triple",           kind:"hit"  },
+  "2B":{ label:"Double",           kind:"hit"  },
+  "1B":{ label:"Single",           kind:"hit"  },
+  BB:  { label:"Walk",             kind:"walk" },
+  HBP: { label:"Hit By Pitch",     kind:"walk" },
+  PO:  { label:"Productive Out",   kind:"out"  },
+  OUT: { label:"Regular Out",      kind:"out"  },
+  SO:  { label:"Strikeout",        kind:"out"  },
+  GIDP:{ label:"Double Play",      kind:"out"  },
+  FC:  { label:"Fielder's Choice", kind:"out"  }
+};
+
+/* =========================================================================
+   MODULE: PLAYER / MATCHUP DATA
+   Batter-vs-pitcher stats: real career at-bats vs each imported pitcher.
+   Teams + eligible positions: imported from a 2026 active-roster reference.
+
+   Loaded from separate JSON files rather than embedded inline — with pitcher
+   coverage growing toward the hundreds, embedding every pitcher's matchups in
+   this file directly would mean shipping megabytes of data on every single
+   page load regardless of which pitcher is actually being played. Instead,
+   fetched from GitHub's raw content host (see DATA_BASE_URL below):
+     data/pitchers.json      — the pitcher list (small, always loaded)
+     data/hitters.json       — the 656-player active roster bank (loaded once)
+     data/<pitcherId>.json   — one file per pitcher, fetched only when that
+                                pitcher actually becomes active
+   ========================================================================= */
+let PITCHERS = [];
+let HITTERS = [];
+let MATCHUPS = {};
+
+// TEMPORARY: hardcoded until the full 365-pitcher season is loaded and a real
+// date-based rotation exists. For now, "today's pitcher" is always Skubal.
+const DAILY_PITCHER_ID = "tarik_skubal";
+let gameMode = "daily"; // "daily" | "practice" — persisted
+
+// Data files are fetched from GitHub's raw content host rather than a
+// same-origin relative path. This makes loading independent of how/where the
+// page itself is served — it works the same whether the page came from
+// Vercel, was opened as a local file, or is served some other way — since
+// it's always an absolute request to the same known location on GitHub.
+// If the repo's default branch is ever renamed, update BRANCH below.
+const REPO_OWNER = "mackey-iii";
+const REPO_NAME = "lineupflip";
+const BRANCH = "main";
+const DATA_BASE_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/data`;
+
+async function fetchJSON(path){
+  const res = await fetch(path, { cache: "no-cache" });
+  if (!res.ok) throw new Error(`Failed to load ${path} (${res.status})`);
+  return res.json();
+}
+
+// Has this pitcher's matchup file already been merged into MATCHUPS? Derived
+// from the data itself rather than a separately-tracked flag, so it's always
+// accurate whether the data arrived via fetch, localStorage, or CSV import.
+function hasPitcherDataLoaded(pitcherId){
+  const prefix = pitcherId + "::";
+  return Object.keys(MATCHUPS).some(k => k.startsWith(prefix));
+}
+
+// Fetches and merges one pitcher's matchup file if it isn't already loaded.
+// A missing file (e.g. a pitcher added manually with no CSV yet) is treated
+// as "no data for this pitcher" rather than an error — the game's own empty
+// states already handle that gracefully.
+async function ensurePitcherData(pitcherId){
+  if (hasPitcherDataLoaded(pitcherId)) return;
+  try{
+    const res = await fetch(`${DATA_BASE_URL}/${pitcherId}.json`, { cache: "no-cache" });
+    if (!res.ok) return;
+    const data = await res.json();
+    Object.keys(data).forEach(hid => {
+      MATCHUPS[matchupKey(pitcherId, hid)] = data[hid];
+    });
+  }catch(e){ /* network hiccup — leave this pitcher's data empty rather than break the page */ }
+}
+
+
+/* =========================================================================
+   MODULE: STAT MATH
+   ========================================================================= */
+function matchupKey(pitcherId, hitterId){ return pitcherId + "::" + hitterId; }
+
+function getRawMatchup(pitcherId, hitterId){
+  return MATCHUPS[matchupKey(pitcherId, hitterId)] || null;
+}
+
+function slashLine(stats){
+  if (!stats || stats.PA <= 0) return { AVG:0, OBP:0, SLG:0, OPS:0, hasData:false };
+  const AB = stats.AB || 0;
+  const H = stats.H || 0;
+  const singles = stats["1B"] || 0;
+  const doubles = stats["2B"] || 0;
+  const triples = stats["3B"] || 0;
+  const hr = stats.HR || 0;
+  const bb = stats.BB || 0;
+  const hbp = stats.HBP || 0;
+  const PA = stats.PA || (AB + bb + hbp + (stats.SF||0));
+  const AVG = AB > 0 ? H / AB : 0;
+  const OBP = PA > 0 ? (H + bb + hbp) / PA : 0;
+  const totalBases = singles*1 + doubles*2 + triples*3 + hr*4;
+  const SLG = AB > 0 ? totalBases / AB : 0;
+  const OPS = OBP + SLG;
+  return { AVG, OBP, SLG, OPS, hasData:true };
+}
+
+function fmt3(n){
+  if (n === Infinity) return "∞";
+  let s = n.toFixed(3);
+  if (n < 1 && n >= 0) s = s.replace(/^0/, "");
+  return s;
+}
+
+function effectiveOps(pitcherId, hitterId){
+  const raw = getRawMatchup(pitcherId, hitterId);
+  const slash = slashLine(raw);
+  if (slash.hasData) return { ops: slash.OPS, isEstimate:false, slash, raw };
+  const est = RULES.noDataDefaultOps;
+  return { ops: est, isEstimate:true, slash: {AVG:0,OBP:0,SLG:0,OPS:est,hasData:false}, raw: raw || {PA:0,AB:0,H:0,"1B":0,"2B":0,"3B":0,HR:0,BB:0,HBP:0,SO:0,GIDP:0,SF:0} };
+}
+
+// Percentile (0-100, 100=best) of hitter's OPS-vs-pitcher among a pool of hitter ids.
+function percentileWithinPool(pitcherId, hitterId, poolIds){
+  const target = effectiveOps(pitcherId, hitterId).ops;
+  const values = poolIds.map(id => effectiveOps(pitcherId, id).ops);
+  const n = values.length;
+  if (n <= 1) return 100;
+  let less = 0, equal = 0;
+  values.forEach(v => { if (v < target) less++; else if (v === target) equal++; });
+  const pct = ((less + 0.5*equal) / n) * 100;
+  return Math.max(0, Math.min(100, pct));
+}
+
+function resolveBucket(percentile){
+  for (const b of OUTCOME_BUCKETS){
+    if (percentile >= b.min && percentile <= b.max) return b;
+  }
+  return OUTCOME_BUCKETS[OUTCOME_BUCKETS.length-1];
+}
+
+function resolveDPBucket(percentile){
+  for (const b of DP_BUCKETS){
+    if (percentile >= b.min && percentile <= b.max) return b;
+  }
+  return DP_BUCKETS[DP_BUCKETS.length-1];
+}
+
+function isForcePlayLive(){
+  return !!game.bases.first && game.outs < 2;
+}
+
+/* =========================================================================
+   MODULE: GAME STATE
+   ========================================================================= */
+let game = null;
+
+function freshGame(){
+  return {
+    pitcherId: gameMode === "daily" ? DAILY_PITCHER_ID : PITCHERS[0].id,
+    order: [],
+    usedTeams: new Set(),
+    usedPositions: new Set(),
+    outs: 0, runs: 0,
+    bases: { first:null, second:null, third:null },
+    battingSpot: 0,
+    gameOver: false,
+    completedAll9: false,
+    log: [],
+    pendingHitterId: null
+  };
+}
+
+function resetGame(){
+  if (gameMode === "daily" && getDailyResult()){
+    showToast("Today's pitcher is already locked in — switch to Practice Mode to keep playing.", document.getElementById("btnReset"));
+    return;
+  }
+  game = freshGame();
+  saveLocal();
+  closeModal();
+  closePostgame();
+  renderAll();
+}
+
+/* ---- daily-challenge lock (one real attempt per calendar day) ----
+   TEMPORARY: today's pitcher is hardcoded (DAILY_PITCHER_ID) until the full
+   365-pitcher rotation exists. The locking mechanism itself — one saved
+   result per date, restored on return visits — is meant to be the real
+   long-term behavior; only the "which pitcher" part is a placeholder. */
+function todayKey(){
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+}
+function getDailyResult(){
+  try{
+    const raw = localStorage.getItem("lineupflip_daily_result");
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (data.date !== todayKey()) return null; // a prior day's result — no longer locks anything
+    return data;
+  }catch(e){ return null; }
+}
+function saveDailyResult(){
+  try{
+    localStorage.setItem("lineupflip_daily_result", JSON.stringify({
+      date: todayKey(),
+      pitcherId: game.pitcherId,
+      log: game.log,
+      runs: game.runs,
+      completedAll9: game.completedAll9,
+      battingSpot: game.battingSpot
+    }));
+  }catch(e){ /* storage unavailable — the attempt still counts this session, just isn't locked on reload */ }
+}
+function restoreGameFromDaily(saved){
+  game = {
+    pitcherId: saved.pitcherId,
+    order: saved.log.map(e => e.hitterId),
+    usedTeams: new Set(saved.log.map(e => e.team)),
+    usedPositions: new Set(saved.log.map(e => e.position)),
+    outs: 3,
+    runs: saved.runs,
+    bases: { first:null, second:null, third:null },
+    battingSpot: saved.battingSpot,
+    gameOver: true,
+    completedAll9: saved.completedAll9,
+    log: saved.log,
+    pendingHitterId: null
+  };
+}
+
+/* ---- persistence (per-viewer convenience only) ----
+   Team name and manager name are the only things left that a player can set
+   themselves, so they're the only things saved locally. Roster, matchup, and
+   rules data always come fresh from the shipped JSON files — there's no admin
+   UI left that could produce a locally-edited version worth persisting. */
+function saveLocal(){
+  try{
+    localStorage.setItem("lineupflip_db_v3", JSON.stringify({ userTeam, managerName, gameMode }));
+  }catch(e){ /* storage unavailable — proceed without persistence */ }
+}
+function loadLocal(){
+  try{
+    const raw = localStorage.getItem("lineupflip_db_v3");
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (data.userTeam) userTeam = data.userTeam;
+    if (data.managerName) managerName = data.managerName;
+    if (data.gameMode === "daily" || data.gameMode === "practice") gameMode = data.gameMode;
+  }catch(e){ /* corrupt/unavailable storage — fall back to defaults */ }
+}
+
+/* =========================================================================
+   MODULE: SELECTION AVAILABILITY
+   ========================================================================= */
+function hitterTeams(hitter){
+  return String(hitter.team || "").split(",").map(s=>s.trim()).filter(Boolean);
+}
+function eligiblePositionsFor(hitter){
+  return (hitter.positions || []).filter(p => !game.usedPositions.has(p));
+}
+function eligibleTeamsFor(hitter){
+  return hitterTeams(hitter).filter(t => !game.usedTeams.has(t));
+}
+function hasFacedPitcher(hitterId){
+  const raw = getRawMatchup(game.pitcherId, hitterId);
+  return !!raw && raw.PA > 0;
+}
+function isHitterAvailable(hitter){
+  if (!hasFacedPitcher(hitter.id)) return false;
+  if (game.order.includes(hitter.id)) return false;
+  if (eligibleTeamsFor(hitter).length === 0) return false;
+  return eligiblePositionsFor(hitter).length > 0;
+}
+function availablePool(){
+  return HITTERS.filter(isHitterAvailable).map(h=>h.id);
+}
+
+/* =========================================================================
+   MODULE: BASERUNNING + OUTCOME RESOLUTION
+   ========================================================================= */
+function applyOutcome(outcome, hitterId){
+  const outsBefore = game.outs;
+  let bases = { first: game.bases.first, second: game.bases.second, third: game.bases.third };
+  let runsScored = 0;
+  let outsAdded = 0;
+
+  switch(outcome){
+    case "HR": {
+      runsScored = 1 + [bases.first, bases.second, bases.third].filter(Boolean).length;
+      bases = { first:null, second:null, third:null };
+      break;
+    }
+    case "3B": {
+      runsScored = [bases.first, bases.second, bases.third].filter(Boolean).length;
+      bases = { first:null, second:null, third:hitterId };
+      break;
+    }
+    case "2B": {
+      runsScored = (bases.third?1:0) + (bases.second?1:0);
+      const newThird = bases.first ? bases.first : null;
+      bases = { first:null, second:hitterId, third:newThird };
+      break;
+    }
+    case "1B": {
+      runsScored = (bases.third?1:0) + (bases.second?1:0);
+      const newSecond = bases.first ? bases.first : null;
+      bases = { first:hitterId, second:newSecond, third:null };
+      break;
+    }
+    case "BB": case "HBP": {
+      if (!bases.first){ bases.first = hitterId; }
+      else if (!bases.second){ bases.second = bases.first; bases.first = hitterId; }
+      else if (!bases.third){ bases.third = bases.second; bases.second = bases.first; bases.first = hitterId; }
+      else { runsScored = 1; bases.third = bases.second; bases.second = bases.first; bases.first = hitterId; }
+      break;
+    }
+    case "PO": {
+      // A runner on first is never present here: lockInSelection routes any
+      // force-play situation (runner on first, <2 outs) to DP_BUCKETS instead,
+      // and the 2-out case is relabeled to a regular out upstream too. So the
+      // only base states that reach this branch are 2nd only, 3rd only, and
+      // 2nd & 3rd together.
+      outsAdded = 1;
+      const s = bases.second, t = bases.third;
+      if (t){
+        runsScored = 1;
+        bases = { first: null, second: null, third: s || null };
+      } else if (s){
+        bases = { first: null, second: null, third: s };
+      }
+      break;
+    }
+    case "GIDP": {
+      // Batter and the runner from first are both out on the double play —
+      // both are force-type outs. If that's the inning's 3rd out, no run can
+      // score on the play no matter who was on third (MLB rule 5.08(a)).
+      outsAdded = 2;
+      bases.first = null;
+      const endsInning = (outsBefore + outsAdded) >= 3;
+      if (!endsInning){
+        if (bases.third){
+          runsScored = 1;
+          bases.third = bases.second || null;
+          bases.second = null;
+        } else if (bases.second){
+          bases.third = bases.second;
+          bases.second = null;
+        }
+      }
+      break;
+    }
+    case "FC": {
+      // The lead runner in the force chain starting from first is always the
+      // one retired; batter reaches first safely. A runner not part of the
+      // chain (e.g. a runner on third when second is empty) isn't forced and
+      // just holds where he is.
+      outsAdded = 1;
+      if (!bases.second){
+        // Force only reaches second: the runner from first is out there.
+        // A runner on third (not forced) holds.
+        bases = { first: hitterId, second: null, third: bases.third || null };
+      } else if (!bases.third){
+        // Force reaches third: the runner from second is out there;
+        // the runner from first is safe at second.
+        bases = { first: hitterId, second: bases.first, third: null };
+      } else {
+        // Bases loaded: force reaches home. The runner from third is out
+        // at the plate — no run scores. Everyone behind him is safe one base up.
+        bases = { first: hitterId, second: bases.first, third: bases.second };
+      }
+      break;
+    }
+    case "OUT": {
+      // Lineout/flyout: doesn't touch first base either way. A runner on third
+      // scores (sac fly) with fewer than 2 outs; a runner on second moves up
+      // to third behind him — whether or not first is also occupied.
+      outsAdded = 1;
+      if (bases.third && outsBefore < 2){
+        runsScored = 1;
+        bases.third = bases.second || null;
+        bases.second = null;
+      } else if (bases.second){
+        bases.third = bases.second;
+        bases.second = null;
+      }
+      break;
+    }
+    case "SO": default: {
+      outsAdded = 1;
+      break;
+    }
+  }
+  game.outs = outsBefore + outsAdded;
+  game.runs += runsScored;
+  game.bases = bases;
+  return { runsScored, outsAdded };
+}
+
+/* =========================================================================
+   MODULE: SELECTION FLOW
+   ========================================================================= */
+function beginSelect(hitterId){
+  if (game.gameOver) return;
+  const hitter = HITTERS.find(h=>h.id===hitterId);
+  if (!hitter || !isHitterAvailable(hitter)) return;
+  const eligPositions = eligiblePositionsFor(hitter);
+  const eligTeams = eligibleTeamsFor(hitter);
+  if (eligPositions.length > 1 || eligTeams.length > 1){
+    game.pendingHitterId = hitterId;
+    openAssignmentModal(hitter, eligPositions, eligTeams);
+  } else {
+    lockInSelection(hitterId, eligPositions[0], eligTeams[0]);
+  }
+}
+
+function lockInSelection(hitterId, position, team){
+  const hitter = HITTERS.find(h=>h.id===hitterId);
+  const pool = availablePool();
+  const percentile = percentileWithinPool(game.pitcherId, hitterId, pool);
+  const eff = effectiveOps(game.pitcherId, hitterId);
+
+  // With a runner on first and fewer than 2 outs, a force play is live at second —
+  // a productive out is essentially impossible there, so the bottom half of the
+  // percentile range resolves through DP_BUCKETS instead of OUTCOME_BUCKETS.
+  let finalOutcome = (isForcePlayLive() && percentile < 50)
+    ? resolveDPBucket(percentile).outcome
+    : resolveBucket(percentile).outcome;
+
+  // A hit outcome doesn't make sense for a hitter with a real .000 average against
+  // this pitcher (his percentile got there entirely on OBP from walks/HBP) — give
+  // him what he actually did instead of a fictional hit.
+  if (["HR","3B","2B","1B"].includes(finalOutcome) && !eff.isEstimate && eff.slash.AVG === 0){
+    const hbpCount = eff.raw.HBP || 0;
+    const bbCount = eff.raw.BB || 0;
+    if (hbpCount > 0 || bbCount > 0){
+      if (hbpCount > bbCount) finalOutcome = "HBP";
+      else if (bbCount > hbpCount) finalOutcome = "BB";
+      else finalOutcome = Math.random() < 0.5 ? "BB" : "HBP";
+    }
+  }
+
+  // With 2 outs, there's no such thing as a productive out — nothing can be
+  // "produced" right before the inning ends — so it's just a regular out instead.
+  // Same if the bases are empty — nobody to advance, so it's not "productive" either.
+  const basesEmpty = !game.bases.first && !game.bases.second && !game.bases.third;
+  if (finalOutcome === "PO" && (game.outs === 2 || basesEmpty)){
+    finalOutcome = "OUT";
+  }
+
+  const meta = OUTCOME_META[finalOutcome];
+  const displayLabel = (finalOutcome === "OUT")
+    ? (Math.random() < 0.5 ? "Lineout" : "Flyout")
+    : meta.label;
+
+  const { runsScored } = applyOutcome(finalOutcome, hitterId);
+
+  game.order.push(hitterId);
+  game.usedTeams.add(team);
+  game.usedPositions.add(position);
+  game.battingSpot++;
+  game.pendingHitterId = null;
+
+  game.log.push({ hitterId, position, team, outcome:finalOutcome, percentile, runsScored, spot: game.battingSpot, label: displayLabel });
+
+  document.getElementById("fSearch").value = "";
+  document.getElementById("fPos").value = "";
+
+  if (game.outs >= 3){
+    game.gameOver = true; game.completedAll9 = false;
+  } else if (game.battingSpot >= 9){
+    game.gameOver = true; game.completedAll9 = true;
+  }
+
+  saveLocal();
+  renderAll();
+  showOutcomeModal(hitter, position, team, finalOutcome, meta, percentile, eff, runsScored, displayLabel);
+}
+
+/* =========================================================================
+   MODULE: SCORING + OPTIMAL LINEUP
+   ========================================================================= */
+function computeFinalScore(){
+  const avgPercentile = game.log.length ? game.log.reduce((a,e)=>a+e.percentile,0)/game.log.length : 0;
+  const runsPts = game.runs * SCORING.perRun;
+  const completion = game.completedAll9 ? SCORING.completionBonus : 0;
+  const qualityPts = avgPercentile * SCORING.matchupQualityWeight;
+  const isPerfect = game.runs >= SCORING.perfectRuns;
+  const final = isPerfect ? SCORING.perfectScore : Math.round(runsPts + completion + qualityPts);
+  return { runsPts, completion, qualityPts, avgPercentile, final, isPerfect };
+}
+
+function computeOptimalLineup(){
+  const pairs = [];
+  HITTERS.filter(h => hasFacedPitcher(h.id)).forEach(h => {
+    const eff = effectiveOps(game.pitcherId, h.id);
+    (h.positions || []).forEach(pos => {
+      hitterTeams(h).forEach(team => {
+        pairs.push({ hitterId:h.id, position:pos, ops:eff.ops, team });
+      });
+    });
+  });
+  pairs.sort((a,b)=> b.ops - a.ops);
+  const usedPos = new Set(), usedTeam = new Set(), usedHitter = new Set();
+  const chosen = {};
+  for (const p of pairs){
+    if (usedPos.has(p.position) || usedTeam.has(p.team) || usedHitter.has(p.hitterId)) continue;
+    chosen[p.position] = p;
+    usedPos.add(p.position); usedTeam.add(p.team); usedHitter.add(p.hitterId);
+    if (usedPos.size === POSITIONS.length) break;
+  }
+  const opsSum = Object.values(chosen).reduce((a,c)=>a + c.ops, 0);
+  const expectedRuns = Math.round(opsSum * 0.29 * 10) / 10;
+  return { chosen, expectedRuns };
+}
+
+/* =========================================================================
+   RENDER: Scoreboard
+   ========================================================================= */
+function teamDisplayName(){
+  const name = `${userTeam.city} ${userTeam.mascot}`.trim();
+  return name || "Your Team";
+}
+
+function renderScoreboard(){
+  const el = document.getElementById("scoreboard");
+  const pitcher = PITCHERS.find(p=>p.id===game.pitcherId);
+  const outDots = [0,1,2].map(i => `<span class="out-dot ${i < game.outs ? 'filled':''}"></span>`).join("");
+  let status = "";
+  if (game.gameOver){
+    status = game.completedAll9 ? "<b>Batted through the order!</b>" : "<b>Inning over — 3 outs.</b>";
+  } else {
+    status = `Batter #${game.battingSpot+1} of 9`;
+  }
+  el.innerHTML = `
+    <div class="sb-block sb-pitcher">
+      <div class="pitcher-team">${pitcher.team} vs <button class="team-name-btn" id="editTeamBtn">${teamDisplayName()} ✎</button></div>
+    </div>
+    <div class="sb-block">
+      <div class="sb-label">Runs</div>
+      <div class="sb-value">${game.runs}</div>
+    </div>
+    <div class="sb-block">
+      <div class="sb-label">Outs</div>
+      <div class="outs-dots">${outDots}</div>
+    </div>
+    <div class="sb-status">${status}</div>
+  `;
+  document.getElementById("editTeamBtn").addEventListener("click", showTeamNameModal);
+}
+/* ---- Diamond SVG ---- */
+function runnerShortName(hitterId){
+  if (!hitterId) return "";
+  const h = HITTERS.find(x=>x.id===hitterId);
+  if (!h) return "";
+  const parts = h.name.split(" ");
+  return parts[parts.length-1];
+}
+
+function renderDiamond(){
+  const svg = document.getElementById("diamondSvg");
+  const on = (b) => b ? "var(--amber)" : "var(--field)";
+  const n1 = runnerShortName(game.bases.first);
+  const n2 = runnerShortName(game.bases.second);
+  const n3 = runnerShortName(game.bases.third);
+  const label = (x,y,text) => text
+    ? `<text x="${x}" y="${y}" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="var(--ball)">${text}</text>`
+    : "";
+  svg.innerHTML = `
+    <polygon points="110,190 30,110 110,30 190,110" fill="none" stroke="var(--line)" stroke-width="3"/>
+    <polygon points="97,181 123,181 123,193 110,203 97,193" fill="var(--dirt)" stroke="var(--dirt-dim)" stroke-width="2"/>
+    <rect x="164" y="98" width="22" height="22" rx="3" fill="${on(game.bases.first)}" stroke="var(--dirt-dim)" stroke-width="2" transform="rotate(45 175 109)"/>
+    <rect x="99" y="33" width="22" height="22" rx="3" fill="${on(game.bases.second)}" stroke="var(--dirt-dim)" stroke-width="2" transform="rotate(45 110 44)"/>
+    <rect x="34" y="98" width="22" height="22" rx="3" fill="${on(game.bases.third)}" stroke="var(--dirt-dim)" stroke-width="2" transform="rotate(45 45 109)"/>
+    ${label(189, 100, n1)}
+    ${label(110, 17, n2)}
+    ${label(31, 100, n3)}
+  `;
+}
+
+/* ---- Manager label ---- */
+function renderManagerLabel(){
+  const el = document.getElementById("managerLabel");
+  const name = managerName.trim();
+  el.innerHTML = `<button class="manager-label-btn" id="editManagerBtn">${name ? 'Manager: ' + name : 'Set manager name'} ✎</button>`;
+  document.getElementById("editManagerBtn").addEventListener("click", showManagerNameModal);
+}
+
+/* ---- Lineup slots (numbered scorecard) + position bank ---- */
+function renderLineupSlots(){
+  const el = document.getElementById("lineupSlots");
+  let html = "";
+  for (let i = 0; i < 9; i++){
+    const entry = game.log[i];
+    if (entry){
+      const h = HITTERS.find(x=>x.id===entry.hitterId);
+      const meta = OUTCOME_META[entry.outcome];
+      html += `<div class="slot filled">
+        <div class="slot-num">${i+1}</div>
+        <div class="slot-body">
+          <div class="slot-name">${h.name} <span style="color:var(--ink-dim);font-weight:500;">— ${entry.position} · ${entry.team}</span></div>
+          <div class="slot-outcome ${meta.kind}">${entry.label || meta.label}${entry.runsScored ? ' · +'+entry.runsScored+' run'+(entry.runsScored>1?'s':'') : ''}</div>
+        </div>
+      </div>`;
+    } else {
+      const isAtBat = (i === game.battingSpot) && !game.gameOver;
+      const isOnDeck = (i === game.battingSpot + 1) && !game.gameOver;
+      const lbl = isAtBat ? "At bat" : (isOnDeck ? "On deck" : "—");
+      html += `<div class="slot ${isAtBat ? 'up-next':''}">
+        <div class="slot-num">${i+1}</div>
+        <div class="slot-body"><span class="slot-empty-label">${lbl}</span></div>
+      </div>`;
+    }
+  }
+  el.innerHTML = html;
+}
+
+function renderPositionBank(){
+  const el = document.getElementById("positionBank");
+  el.innerHTML = `<div class="ts-label" style="margin-bottom:8px;">Positions</div>
+    <div class="pos-bank-row">
+      ${POSITIONS.map(p => `<span class="pos-bank-chip ${game.usedPositions.has(p) ? 'used' : ''}">${p}</span>`).join("")}
+    </div>`;
+}
+
+function renderTeamSummary(){
+  const el = document.getElementById("teamSummary");
+  const used = game.log;
+  const avgPercentile = used.length ? used.reduce((a,e)=>a+e.percentile,0)/used.length : 0;
+  const opsVals = used.map(e => effectiveOps(game.pitcherId, e.hitterId).ops);
+  const avgOps = opsVals.length ? opsVals.reduce((a,b)=>a+b,0)/opsVals.length : 0;
+  el.innerHTML = `
+    <div class="ts-item"><div class="ts-label">Avg BvP OPS</div><div class="ts-value">${fmt3(avgOps)}</div></div>
+    <div class="ts-item"><div class="ts-label">Avg matchup pctl.</div><div class="ts-value">${avgPercentile.toFixed(0)}%</div></div>
+  `;
+}
+
+/* ---- Hitter search list ---- */
+function populateFilterOptions(){
+  const posSel = document.getElementById("fPos");
+  const teamSel = document.getElementById("fTeam");
+  if (posSel.options.length <= 1){
+    POSITIONS.forEach(p => { const o=document.createElement("option"); o.value=p; o.textContent=p; posSel.appendChild(o); });
+  }
+  if (teamSel.options.length <= 1){
+    const teamSet = new Set();
+    HITTERS.forEach(h => hitterTeams(h).forEach(t => teamSet.add(t)));
+    const teams = Array.from(teamSet).sort();
+    teams.forEach(t => { const o=document.createElement("option"); o.value=t; o.textContent=t; teamSel.appendChild(o); });
+  }
+}
+
+function bvpPaCount(hitterId){
+  const raw = getRawMatchup(game.pitcherId, hitterId);
+  return raw ? raw.PA : 0;
+}
+
+// Orders a hitter's bats code (R/L/B, where B = switch) against a 3-letter
+// sequence like "LSR" or "RSL" (S standing in for switch/both in the sequence).
+function batsOrder(bats, sequence){
+  const code = bats === "B" ? "S" : bats;
+  const idx = sequence.indexOf(code);
+  return idx === -1 ? sequence.length : idx;
+}
+
+function renderPlayerGrid(){
+  const list = document.getElementById("hitterList");
+  const pickStatus = document.getElementById("pickStatus");
+  populateFilterOptions();
+
+  if (game.gameOver){
+    if (gameMode === "daily"){
+      list.innerHTML = `<div class="empty-note">You've already played today's pitcher. Come back tomorrow for a new one — or switch to <b>Practice Mode</b> above to keep playing right now.</div>`;
+    } else {
+      list.innerHTML = `<div class="empty-note">Inning's over. Check the recap, then reset to try a new strategy.</div>`;
+    }
+    pickStatus.textContent = "";
+    return;
+  }
+  pickStatus.textContent = `${9 - game.battingSpot} spot${9-game.battingSpot===1?'':'s'} left to fill`;
+
+  const search = normalizeForMatch(document.getElementById("fSearch").value);
+  const posFilter = document.getElementById("fPos").value;
+  const teamFilter = document.getElementById("fTeam").value;
+  const sortMode = document.getElementById("fSort").value;
+
+  let items = HITTERS.filter(h => hasFacedPitcher(h.id));
+  if (search) items = items.filter(h => normalizeForMatch(h.name).includes(search));
+  if (posFilter) items = items.filter(h => (h.positions||[]).includes(posFilter));
+  if (teamFilter) items = items.filter(h => hitterTeams(h).includes(teamFilter));
+
+  if (sortMode === "team") items.sort((a,b)=> a.team.localeCompare(b.team) || a.name.localeCompare(b.name));
+  else if (sortMode === "ops2026") items.sort((a,b)=> (b.ops2026 ?? -1) - (a.ops2026 ?? -1) || a.name.localeCompare(b.name));
+  else if (sortMode === "batsLSR") items.sort((a,b)=> batsOrder(a.bats, "LSR") - batsOrder(b.bats, "LSR") || a.name.localeCompare(b.name));
+  else if (sortMode === "batsRSL") items.sort((a,b)=> batsOrder(a.bats, "RSL") - batsOrder(b.bats, "RSL") || a.name.localeCompare(b.name));
+  else items.sort((a,b)=> a.name.localeCompare(b.name));
+
+  if (items.length === 0){
+    const pitcherName = PITCHERS.find(p=>p.id===game.pitcherId).name;
+    list.innerHTML = `<div class="empty-note">No hitters match those filters.</div>`;
+    if (!HITTERS.some(h => hasFacedPitcher(h.id))){
+      list.innerHTML = `<div class="empty-note">No hitters in your active roster have any recorded at-bats against ${pitcherName} yet.</div>`;
+    }
+    return;
+  }
+
+  list.innerHTML = items.map(h => {
+    const avail = isHitterAvailable(h);
+    const teamBlocked = eligibleTeamsFor(h).length === 0;
+    const posBlocked = !teamBlocked && eligiblePositionsFor(h).length === 0;
+    let reason = "";
+    if (!avail){
+      if (game.order.includes(h.id)) reason = "Already batted";
+      else if (teamBlocked) reason = "Team already used";
+      else if (posBlocked) reason = "Position(s) already used";
+    }
+    const teamPills = hitterTeams(h).map(t => `<span class="team-pill ${!game.usedTeams.has(t) ? 'avail':''}">${t}</span>`).join("");
+    const pills = (h.positions||[]).map(p => `<span class="pos-pill ${!game.usedPositions.has(p) ? 'avail':''}">${p}</span>`).join("");
+    const opsDisplay = h.ops2026 != null ? fmt3(h.ops2026) : '—';
+    return `<div class="pick-row ${avail ? 'clickable' : 'disabled'}" ${avail ? `data-pick="${h.id}"` : ''}>
+      <div class="pick-row-top">
+        <div class="pr-name">${h.name}</div>
+        ${reason ? `<div class="pr-reason">${reason}</div>` : `<div class="pr-ops">${opsDisplay} <span class="pr-ops-lbl">2026 OPS</span></div>`}
+      </div>
+      <div class="pick-row-bottom">
+        ${teamPills}
+        <span class="bats-tag">${h.bats}</span>
+        ${pills}
+      </div>
+    </div>`;
+  }).join("");
+
+  list.querySelectorAll("[data-pick]").forEach(row => {
+    row.addEventListener("click", () => beginSelect(row.getAttribute("data-pick")));
+  });
+}
+
+function populatePitcherSelect(){
+  const sel = document.getElementById("pitcherSelect");
+  if (!sel) return;
+  sel.innerHTML = PITCHERS.map(p => `<option value="${p.id}" ${p.id===game.pitcherId?'selected':''}>${p.name}</option>`).join("");
+}
+
+function renderModeUI(){
+  document.querySelectorAll(".mode-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.mode === gameMode);
+  });
+  const pitcherSelect = document.getElementById("pitcherSelect");
+  const card = document.getElementById("dailyPitcherCard");
+  const resetBtn = document.getElementById("btnReset");
+  const locked = gameMode === "daily" && !!getDailyResult();
+
+  // The card always reflects whichever pitcher is actually active — the
+  // fixed daily pitcher in Daily mode, or whoever's picked in the dropdown
+  // in Practice mode — so both modes get the same rich display.
+  pitcherSelect.style.display = (gameMode === "daily") ? "none" : "";
+  card.style.display = "flex";
+  const p = PITCHERS.find(p => p.id === game.pitcherId);
+  const kicker = (gameMode === "daily") ? "Today's pitcher" : "Selected pitcher";
+  const throwsLbl = p && p.throws ? (p.throws === "L" ? "Throws: L" : "Throws: R") : "Throws: —";
+  const era = (p && p.era != null) ? p.era : "—";
+  const ip = (p && p.ip != null) ? p.ip : "—";
+  const so = (p && p.so != null) ? p.so : "—";
+  card.innerHTML = `
+    <div class="dpc-id">
+      <div class="dpc-kicker">${kicker}</div>
+      <div class="dpc-name">${p ? p.name : game.pitcherId}</div>
+      <div class="dpc-meta">${p ? p.team : ""} <span class="dpc-throws">${throwsLbl}</span></div>
+    </div>
+    <div class="dpc-stats">
+      <div class="dpc-stat"><div class="v">${era}</div><div class="k">ERA</div></div>
+      <div class="dpc-stat"><div class="v">${ip}</div><div class="k">IP</div></div>
+      <div class="dpc-stat"><div class="v">${so}</div><div class="k">K</div></div>
+    </div>
+  `;
+  resetBtn.style.display = locked ? "none" : "";
+}
+
+function renderAll(){
+  renderScoreboard();
+  renderDiamond();
+  renderManagerLabel();
+  renderLineupSlots();
+  renderPositionBank();
+  renderTeamSummary();
+  renderPlayerGrid();
+  populatePitcherSelect();
+  renderModeUI();
+}
+
+/* =========================================================================
+   MODALS
+   ========================================================================= */
+function updateBodyScrollLock(){
+  const modalOpen = document.getElementById("modalRoot").innerHTML.trim() !== "";
+  const postgameOpen = document.getElementById("postgameRoot").innerHTML.trim() !== "";
+  document.body.style.overflow = (modalOpen || postgameOpen) ? "hidden" : "";
+}
+
+function closeModal(){
+  document.getElementById("modalRoot").innerHTML = "";
+  updateBodyScrollLock();
+}
+
+function showConfirmModal(message, onConfirm){
+  const root = document.getElementById("modalRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="confirmOverlay">
+      <div class="modal" style="max-width:380px;">
+        <div class="modal-head" style="text-align:left;padding-bottom:4px;">
+          <div class="modal-player" style="font-size:16px;">${message}</div>
+        </div>
+        <div class="modal-foot" style="display:flex;gap:10px;padding-top:8px;">
+          <button class="btn" id="confirmCancelBtn" style="flex:1;justify-content:center;">Cancel</button>
+          <button class="btn btn-danger" id="confirmOkBtn" style="flex:1;justify-content:center;">Confirm</button>
+        </div>
+      </div>
+    </div>
+  `;
+  updateBodyScrollLock();
+  document.getElementById("confirmCancelBtn").addEventListener("click", closeModal);
+  document.getElementById("confirmOkBtn").addEventListener("click", () => { closeModal(); onConfirm(); });
+  document.getElementById("confirmOverlay").addEventListener("click", (e) => { if (e.target.id === "confirmOverlay") closeModal(); });
+}
+
+function showToast(msg, anchorEl){
+  if (anchorEl){
+    // Position directly above whatever element triggered it, so it's always
+    // visible near the point of interaction — important inside tall,
+    // scrollable overlays like the postgame recap, where a toast fixed to
+    // the bottom of the whole screen can end up off-screen or hidden behind
+    // mobile browser chrome depending on scroll position.
+    const rect = anchorEl.getBoundingClientRect();
+    const margin = 12;
+    const left = Math.min(Math.max(rect.left + rect.width/2, margin), window.innerWidth - margin);
+    const top = Math.max(rect.top - 10, margin);
+    const t = document.createElement("div");
+    t.className = "toast toast-anchored";
+    t.textContent = msg;
+    t.style.left = left + "px";
+    t.style.top = top + "px";
+    document.body.appendChild(t);
+    setTimeout(() => { t.remove(); }, 2700);
+    return;
+  }
+  let stack = document.getElementById("toastStack");
+  if (!stack){
+    stack = document.createElement("div");
+    stack.id = "toastStack";
+    stack.className = "toast-stack";
+    document.body.appendChild(stack);
+  }
+  const t = document.createElement("div");
+  t.className = "toast";
+  t.textContent = msg;
+  stack.appendChild(t);
+  setTimeout(() => { t.remove(); }, 2700);
+}
+
+function openAssignmentModal(hitter, positions, teams){
+  const root = document.getElementById("modalRoot");
+  const needTeam = teams.length > 1;
+  const needPosition = positions.length > 1;
+  const subtitle = (needTeam && needPosition)
+    ? "Eligible for multiple open teams and positions — pick both."
+    : needTeam
+      ? "Eligible for multiple open teams — which one is he on?"
+      : "Eligible at multiple open positions — which spot is he playing?";
+
+  root.innerHTML = `
+    <div class="modal-overlay" id="assignModalOverlay">
+      <div class="modal">
+        <div class="modal-head">
+          <div class="modal-player">${hitter.name}</div>
+          <div class="modal-sub">${subtitle}</div>
+        </div>
+        ${needTeam ? `
+          <div class="assign-group-label">Team</div>
+          <div class="pos-choice-grid">
+            ${teams.map(t => `<button class="btn pos-choice" data-choose-team="${t}"><div class="p">${t}</div></button>`).join("")}
+          </div>` : ``}
+        ${needPosition ? `
+          <div class="assign-group-label">Position</div>
+          <div class="pos-choice-grid">
+            ${positions.map(p => `<button class="btn pos-choice" data-choose-pos="${p}"><div class="p">${p}</div></button>`).join("")}
+          </div>` : ``}
+      </div>
+    </div>
+  `;
+  updateBodyScrollLock();
+
+  let chosenTeam = needTeam ? null : teams[0];
+  let chosenPosition = needPosition ? null : positions[0];
+
+  function tryFinish(){
+    if (chosenTeam && chosenPosition){
+      closeModal();
+      lockInSelection(hitter.id, chosenPosition, chosenTeam);
+    }
+  }
+
+  if (needTeam){
+    root.querySelectorAll("[data-choose-team]").forEach(btn=>{
+      btn.addEventListener("click", () => {
+        chosenTeam = btn.getAttribute("data-choose-team");
+        root.querySelectorAll("[data-choose-team]").forEach(b=>b.classList.remove("chosen"));
+        btn.classList.add("chosen");
+        tryFinish();
+      });
+    });
+  }
+  if (needPosition){
+    root.querySelectorAll("[data-choose-pos]").forEach(btn=>{
+      btn.addEventListener("click", () => {
+        chosenPosition = btn.getAttribute("data-choose-pos");
+        root.querySelectorAll("[data-choose-pos]").forEach(b=>b.classList.remove("chosen"));
+        btn.classList.add("chosen");
+        tryFinish();
+      });
+    });
+  }
+
+  document.getElementById("assignModalOverlay").addEventListener("click", (e)=>{
+    if (e.target.id === "assignModalOverlay"){ closeModal(); game.pendingHitterId = null; }
+  });
+}
+
+function showOutcomeModal(hitter, position, team, outcome, meta, percentile, eff, runsScored, displayLabel){
+  const root = document.getElementById("modalRoot");
+  const slash = eff.slash;
+  const raw = eff.raw;
+  const label = displayLabel || meta.label;
+  let sampleLine;
+  if (raw.PA > 0){
+    if (raw.AB > 0){
+      sampleLine = `${raw.H}-for-${raw.AB}${raw.HR ? ', '+raw.HR+' HR' : ''}${raw.BB ? ', '+raw.BB+' BB' : ''}${raw.HBP ? ', '+raw.HBP+' HBP' : ''}`;
+    } else {
+      const parts = [];
+      if (raw.BB) parts.push(`${raw.BB} BB`);
+      if (raw.HBP) parts.push(`${raw.HBP} HBP`);
+      sampleLine = `${raw.PA} PA, ${parts.join(', ')} — no official at-bats`;
+    }
+  } else {
+    sampleLine = "No prior plate appearances on record";
+  }
+  root.innerHTML = `
+    <div class="modal-overlay" id="outcomeOverlay">
+      <div class="modal">
+        <div class="modal-head">
+          <div class="modal-outcome ${meta.kind}">${label.toUpperCase()}</div>
+          <div class="modal-player">${hitter.name}</div>
+          <div class="modal-sub">${position} · ${team}${runsScored ? ' · +'+runsScored+' run'+(runsScored>1?'s':'') : ''}</div>
+        </div>
+        <div class="modal-body">
+          <div class="modal-divider"></div>
+          <div class="modal-line"><b style="color:var(--ball);">2026</b> vs ${PITCHERS.find(p=>p.id===game.pitcherId).name}${eff.isEstimate ? ' (no BvP sample — league estimate used)' : ''}</div>
+          <div class="modal-line" style="margin-top:-6px;color:var(--ink);font-weight:600;">${sampleLine}</div>
+          <div class="slash-grid">
+            <div class="slash-item"><div class="slash-val">${fmt3(slash.AVG)}</div><div class="slash-lbl">AVG</div></div>
+            <div class="slash-item"><div class="slash-val">${fmt3(slash.OBP)}</div><div class="slash-lbl">OBP</div></div>
+            <div class="slash-item"><div class="slash-val">${fmt3(slash.SLG)}</div><div class="slash-lbl">SLG</div></div>
+            <div class="slash-item"><div class="slash-val">${fmt3(slash.OPS)}</div><div class="slash-lbl">OPS</div></div>
+          </div>
+          <div class="percentile-bar-wrap">
+            <div class="percentile-bar"><div class="percentile-bar-fill" style="width:${percentile.toFixed(1)}%"></div></div>
+            <div class="percentile-label">Matchup percentile: <b style="color:var(--ball)">${percentile.toFixed(1)}%</b> among hitters available at the time</div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button class="btn btn-primary" id="closeOutcomeBtn">${game.gameOver ? 'See recap' : 'Next batter'}</button>
+        </div>
+      </div>
+    </div>
+  `;
+  updateBodyScrollLock();
+  document.getElementById("closeOutcomeBtn").addEventListener("click", () => {
+    closeModal();
+    if (game.gameOver){
+      if (gameMode === "daily") saveDailyResult();
+      openPostgame();
+    }
+  });
+}
+
+/* =========================================================================
+   POSTGAME
+   ========================================================================= */
+function buildShareText(score){
+  const pitcher = PITCHERS.find(p => p.id === game.pitcherId);
+  const squares = game.log.map(entry => {
+    const kind = OUTCOME_META[entry.outcome].kind;
+    if (kind === "hit") return "🟩";
+    if (kind === "walk") return "🟦";
+    return "🟥"; // kind === "out"
+  }).join("");
+  return `Lineup Flip\nScore vs ${pitcher.name}: ${score.final.toLocaleString()}\n${squares}\nlineupflip.com`;
+}
+
+async function shareResults(){
+  const btn = document.getElementById("pgShareBtn");
+  const score = computeFinalScore();
+  const text = buildShareText(score);
+  try{
+    await navigator.clipboard.writeText(text);
+    showToast("Results copied to clipboard", btn);
+  }catch(e){
+    // Clipboard API unavailable (older browser, non-secure context) — fall
+    // back to the classic hidden-textarea copy trick.
+    try{
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      showToast("Results copied to clipboard", btn);
+    }catch(e2){
+      showToast("Couldn't copy — try again or copy manually.", btn);
+    }
+  }
+}
+
+function closePostgame(){
+  document.getElementById("postgameRoot").innerHTML = "";
+  updateBodyScrollLock();
+}
+function openPostgame(){
+  const root = document.getElementById("postgameRoot");
+  const score = computeFinalScore();
+  const optimal = computeOptimalLineup();
+  const dailyLocked = gameMode === "daily" && !!getDailyResult();
+
+  let topChoiceCount = 0;
+  game.log.forEach(entry => {
+    const rivals = HITTERS.filter(h=>(h.positions||[]).includes(entry.position) && hasFacedPitcher(h.id))
+      .map(h => ({ id:h.id, ops: effectiveOps(game.pitcherId, h.id).ops }))
+      .sort((a,b)=>b.ops-a.ops);
+    const rank = rivals.findIndex(r => r.id === entry.hitterId);
+    if (rank >= 0 && rank < 3) topChoiceCount++;
+  });
+
+  const rows = game.log.map(entry => {
+    const h = HITTERS.find(x=>x.id===entry.hitterId);
+    const meta = OUTCOME_META[entry.outcome];
+    return `<tr>
+      <td>${entry.spot}</td>
+      <td>${h.name}<div style="color:var(--ink-dim);font-size:10.5px;">${entry.position} · ${entry.team}</div></td>
+      <td><span class="outcome-tag ${meta.kind}">${entry.label || meta.label}</span></td>
+      <td>${entry.percentile.toFixed(1)}%</td>
+      <td>${entry.runsScored || 0}</td>
+    </tr>`;
+  }).join("");
+
+  const optimalRows = POSITIONS.map(pos => {
+    const c = optimal.chosen[pos];
+    if (!c) return `<tr><td>${pos}</td><td colspan="2" style="color:var(--ink-dim)">—</td></tr>`;
+    const h = HITTERS.find(x=>x.id===c.hitterId);
+    return `<tr><td>${pos}</td><td>${h.name}</td><td>${fmt3(c.ops)}</td></tr>`;
+  }).join("");
+
+  root.innerHTML = `
+    <div class="postgame-overlay" id="postgameOverlay">
+      <div class="postgame-card">
+        <div class="pg-title">${game.completedAll9 ? "Batted through the order" : "Inning over"}</div>
+        <div class="pg-sub">${game.completedAll9 ? "All nine spots reached base or scored without the third out." : `${game.battingSpot} of 9 spots filled before the third out.`}</div>
+
+        <div class="pg-score">
+          ${score.isPerfect ? `<div class="pg-perfect-badge">⭐ PERFECT SCORE ⭐</div>` : ''}
+          <div class="num">${score.final.toLocaleString()}</div>
+          <div class="lbl">${score.isPerfect ? `${SCORING.perfectRuns} runs scored — flat award` : 'Final score'}</div>
+        </div>
+
+        <div class="pg-grid">
+          <div class="pg-cell"><div class="v">${game.runs}</div><div class="k">Runs</div></div>
+          <div class="pg-cell"><div class="v">${game.log.length}/9</div><div class="k">Batters used</div></div>
+          <div class="pg-cell"><div class="v">${score.avgPercentile.toFixed(1)}%</div><div class="k">Avg matchup pctl.</div></div>
+          <div class="pg-cell"><div class="v">${topChoiceCount}/${game.log.length}</div><div class="k">Top-3 positional picks</div></div>
+        </div>
+
+        <h4 style="font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-dim);margin:20px 0 6px;">Plate appearances</h4>
+        <table class="pg-table">
+          <thead><tr><th>#</th><th>Batter</th><th>Outcome</th><th>Pctl.</th><th>Runs</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+
+        <h4 style="font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-dim);margin:22px 0 6px;">Optimal lineup vs this pitcher</h4>
+        <div class="small-note" style="margin-bottom:8px;">Best available matchup at each position, one player per team — a simplified approximation, not a true optimizer.</div>
+        <table class="pg-table">
+          <thead><tr><th>Pos</th><th>Best hitter</th><th>BvP OPS</th></tr></thead>
+          <tbody>${optimalRows}</tbody>
+        </table>
+        <div class="compare-row" style="margin-top:10px;">
+          <span class="small-note">Your runs: <b style="color:var(--ball)">${game.runs}</b></span>
+          <span class="small-note">Optimal expected runs: <b style="color:var(--ball)">${optimal.expectedRuns}</b></span>
+        </div>
+
+        <div class="pg-actions">
+          <button class="btn" id="pgCloseBtn">Close recap</button>
+          <button class="btn" id="pgShareBtn">Share results</button>
+          ${dailyLocked
+            ? `<button class="btn btn-primary" id="pgPracticeBtn">Switch to Practice Mode</button>`
+            : `<button class="btn btn-primary" id="pgResetBtn">Play again</button>`}
+        </div>
+      </div>
+    </div>
+  `;
+  updateBodyScrollLock();
+  document.getElementById("pgCloseBtn").addEventListener("click", closePostgame);
+  document.getElementById("pgShareBtn").addEventListener("click", shareResults);
+  if (dailyLocked){
+    document.getElementById("pgPracticeBtn").addEventListener("click", async () => {
+      gameMode = "practice";
+      game = freshGame();
+      await ensurePitcherData(game.pitcherId);
+      saveLocal();
+      closePostgame();
+      renderAll();
+    });
+  } else {
+    document.getElementById("pgResetBtn").addEventListener("click", resetGame);
+  }
+}
+
+/* =========================================================================
+   SEARCH HELPERS
+   ========================================================================= */
+// Strips accents/diacritics for matching and searching (e.g. "García" ~ "garcia",
+// "Rodríguez" ~ "rodriguez") without touching the original display name anywhere.
+function normalizeForMatch(str){
+  return String(str || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+/* =========================================================================
+   TEAM NAME
+   ========================================================================= */
+function showTeamNameModal(){
+  const root = document.getElementById("modalRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="teamNameOverlay">
+      <div class="modal" style="max-width:420px;">
+        <div class="modal-head" style="text-align:left;padding-bottom:4px;">
+          <div class="modal-player" style="font-size:17px;">Name your team</div>
+          <div class="modal-sub">Shown as "${PITCHERS.find(p=>p.id===game.pitcherId).team} vs [your team]" on the scoreboard.</div>
+        </div>
+        <div class="modal-body" style="text-align:left;">
+          <div class="field-row" style="margin-top:14px;">
+            <div><label>Select city or state (optional)</label><input id="teamCityInput" placeholder="e.g. Phoenix or Arizona" value="${userTeam.city}"></div>
+            <div><label>Select mascot (optional)</label><input id="teamMascotInput" placeholder="e.g. Roadrunners" value="${userTeam.mascot}"></div>
+          </div>
+        </div>
+        <div class="modal-foot" style="display:flex;gap:10px;">
+          <button class="btn" id="teamNameCancelBtn" style="flex:1;justify-content:center;">Cancel</button>
+          <button class="btn btn-primary" id="teamNameSaveBtn" style="flex:1;justify-content:center;">Save</button>
+        </div>
+      </div>
+    </div>
+  `;
+  updateBodyScrollLock();
+  document.getElementById("teamNameCancelBtn").addEventListener("click", closeModal);
+  document.getElementById("teamNameOverlay").addEventListener("click", (e)=>{ if(e.target.id==="teamNameOverlay") closeModal(); });
+  document.getElementById("teamNameSaveBtn").addEventListener("click", () => {
+    const city = document.getElementById("teamCityInput").value.trim();
+    const mascot = document.getElementById("teamMascotInput").value.trim();
+    if (city && !mascot){
+      showToast("A city or state needs a mascot to go with it — add one, or clear the city/state.");
+      return;
+    }
+    userTeam = { city, mascot };
+    saveLocal();
+    closeModal();
+    renderScoreboard();
+  });
+}
+
+function showManagerNameModal(){
+  const root = document.getElementById("modalRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="managerNameOverlay">
+      <div class="modal" style="max-width:380px;">
+        <div class="modal-head" style="text-align:left;padding-bottom:4px;">
+          <div class="modal-player" style="font-size:17px;">Manager name</div>
+          <div class="modal-sub">Shown above your lineup card. Saved in this browser.</div>
+        </div>
+        <div class="modal-body" style="text-align:left;">
+          <div class="field-row full" style="margin-top:14px;">
+            <div><label>Your name</label><input id="managerNameInput" placeholder="e.g. Sam" value="${managerName}"></div>
+          </div>
+        </div>
+        <div class="modal-foot" style="display:flex;gap:10px;">
+          <button class="btn" id="managerNameCancelBtn" style="flex:1;justify-content:center;">Cancel</button>
+          <button class="btn btn-primary" id="managerNameSaveBtn" style="flex:1;justify-content:center;">Save</button>
+        </div>
+      </div>
+    </div>
+  `;
+  updateBodyScrollLock();
+  document.getElementById("managerNameCancelBtn").addEventListener("click", closeModal);
+  document.getElementById("managerNameOverlay").addEventListener("click", (e)=>{ if(e.target.id==="managerNameOverlay") closeModal(); });
+  document.getElementById("managerNameSaveBtn").addEventListener("click", () => {
+    managerName = document.getElementById("managerNameInput").value.trim();
+    saveLocal();
+    closeModal();
+    renderManagerLabel();
+  });
+}
+
+/* =========================================================================
+   HOW TO PLAY
+   ========================================================================= */
+function showHowTo(){
+  const root = document.getElementById("modalRoot");
+  root.innerHTML = `
+    <div class="modal-overlay" id="howtoOverlay">
+      <div class="modal" style="max-width:520px;">
+        <div class="modal-head" style="text-align:left;">
+          <div class="modal-player" style="font-size:19px;">How to play</div>
+        </div>
+        <div class="modal-body" style="text-align:left;">
+          <div class="modal-divider"></div>
+          <p class="small-note" style="font-size:13px;line-height:1.6;">
+            Search for a hitter and click them to send them to the plate against today's pitcher.
+            Each defensive position (C, 1B, 2B, 3B, SS, LF, CF, RF, DH) and each MLB team can only
+            be used once, and once you lock a player in, that pick is final. If a hitter is eligible
+            at more than one open position, or played for more than one team, you'll be asked which
+            one applies for that pick.
+          </p>
+          <p class="small-note" style="font-size:13px;line-height:1.6;">
+            You won't see a hitter's stats against today's pitcher until after you've selected him —
+            beforehand you only see his team, positions, bats, and his <b>2026 season OPS</b>. The
+            outcome is driven mostly by how his <b>2026 OPS against this specific pitcher</b> ranks
+            against everyone else still available, including small, noisy real-world samples.
+          </p>
+          <p class="small-note" style="font-size:13px;line-height:1.6;">
+            Three outs and the inning ends immediately — wherever you are in the order. Survive all nine
+            picks and you've batted through the lineup. You choose the order picks happen in, so you can
+            save a great matchup for later — but you might make three outs before you get there.
+          </p>
+        </div>
+        <div class="modal-foot"><button class="btn btn-primary" id="closeHowto">Got it</button></div>
+      </div>
+    </div>
+  `;
+  updateBodyScrollLock();
+  document.getElementById("closeHowto").addEventListener("click", closeModal);
+  document.getElementById("howtoOverlay").addEventListener("click",(e)=>{ if(e.target.id==="howtoOverlay") closeModal(); });
+}
+
+/* =========================================================================
+   INIT
+   ========================================================================= */
+async function init(){
+  loadLocal();
+
+  // Roster/pitcher data is always fetched fresh — there's no local editing
+  // path anymore that could produce something worth restoring instead. A
+  // loading note keeps the page from looking broken during the brief fetch.
+  const scoreboardEl = document.getElementById("scoreboard");
+  if (!HITTERS.length || !PITCHERS.length){
+    scoreboardEl.innerHTML = `<div style="padding:20px;text-align:center;color:var(--ink-dim);grid-column:1/-1;">Loading roster…</div>`;
+    try{
+      const [pitchers, hitters] = await Promise.all([
+        fetchJSON(`${DATA_BASE_URL}/pitchers.json`),
+        fetchJSON(`${DATA_BASE_URL}/hitters.json`)
+      ]);
+      if (!PITCHERS.length) PITCHERS = pitchers;
+      if (!HITTERS.length) HITTERS = hitters;
+    }catch(e){
+      scoreboardEl.innerHTML = `<div style="padding:20px;text-align:center;color:var(--danger);grid-column:1/-1;">Couldn't load game data — check your connection and refresh.</div>`;
+      return;
+    }
+  }
+
+  const dailySaved = gameMode === "daily" ? getDailyResult() : null;
+  if (dailySaved){
+    restoreGameFromDaily(dailySaved);
+    await ensurePitcherData(dailySaved.pitcherId);
+  } else {
+    game = freshGame();
+    await ensurePitcherData(game.pitcherId);
+  }
+
+  document.getElementById("btnReset").addEventListener("click", () => {
+    showConfirmModal("Reset the current game? All picks will be cleared.", resetGame);
+  });
+  document.getElementById("btnHowTo").addEventListener("click", showHowTo);
+  document.getElementById("fSearch").addEventListener("input", renderPlayerGrid);
+  document.getElementById("fPos").addEventListener("change", renderPlayerGrid);
+  document.getElementById("fTeam").addEventListener("change", renderPlayerGrid);
+  document.getElementById("fSort").addEventListener("change", renderPlayerGrid);
+  document.getElementById("pitcherSelect").addEventListener("change", async (e) => {
+    const newPitcherId = e.target.value;
+    e.target.disabled = true;
+    await ensurePitcherData(newPitcherId);
+    resetGame();
+    game.pitcherId = newPitcherId;
+    saveLocal();
+    renderAll();
+    e.target.disabled = false;
+  });
+  document.querySelectorAll(".mode-btn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const newMode = btn.dataset.mode;
+      if (newMode === gameMode) return;
+      gameMode = newMode;
+      const saved = gameMode === "daily" ? getDailyResult() : null;
+      if (saved){
+        restoreGameFromDaily(saved);
+        await ensurePitcherData(saved.pitcherId);
+      } else {
+        game = freshGame();
+        await ensurePitcherData(game.pitcherId);
+      }
+      saveLocal();
+      closeModal();
+      closePostgame();
+      renderAll();
+    });
+  });
+
+  renderAll();
+  if (dailySaved) openPostgame();
+}
+
+document.addEventListener("DOMContentLoaded", init);
+})();
+</script>
+</body>
+</html>
